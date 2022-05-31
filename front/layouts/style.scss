@@ -1,0 +1,12 @@
+@import '~/assets/styles/_variables';
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: #40a798;
+  color: $font-color-base-white;
+
+  &__logo {
+    height: 100%;
+  }
+}

@@ -1,0 +1,76 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+// colors
+// -----------------------------------------
+$black: #333;
+$black-darker: #000;
+$gray-lighter: #f3f3f3;
+$gray: #666;
+$gray-material: #ecf0f1;
+$white: #fff;
+$red: #ff7766;
+$blue-lighter: #b4efff;
+$blue: #00c8ff;
+
+// font family's
+// -----------------------------------------
+$font-family-base: 'Noto Sans JP', sans-serif;
+
+// font colors
+// -----------------------------------------
+$font-color-base-lighter: $gray;
+$font-color-base: $black;
+$font-color-base-white: $gray-material;
+$font-color-base-darker: $black-darker;
+$font-color-accent: $red;
+$font-color-link: $black;
+$font-color-link-hover: #789;
+
+// font size
+// -----------------------------------------
+$font-xs-size: 1rem;
+$font-xsl-size: 1.1rem;
+$font-ss-size: 1.2rem;
+$font-s-size: 1.3rem;
+$font-sl-size: 1.4rem;
+$font-ms-size: 1.5rem;
+$font-m-size: 1.6rem;
+$font-ml-size: 1.7rem;
+$font-ls-size: 1.8rem;
+$font-l-size: 1.9em;
+$font-ll-size: 2rem;
+$font-xls-size: 2.2rem;
+$font-xll-size: 2.6rem;
+$font-xxls-size: 3rem;
+$font-xxl-size: 4rem;
+
+// layout
+// -----------------------------------------
+$header-height-pc: 120px;
+$header-height-sp: 68px;
+$footer-height-pc: 98px;
+$footer-height-sp: 60px;
+$contents-width: 1100px;
+
+// z-index
+// Add in increments of 5
+// -----------------------------------------
+$layer: (
+  header: 10,
+  footer: 5,
+  pageTop: 5,
+  default: 1,
+  overlay: -5
+);
+
+// break points
+// -----------------------------------------
+$breakpoints: (
+  sp: 'all and (max-width: 559px)',
+  tb: 'all and (min-width: 560px) and (max-width: 959px)',
+  pc: 'all and (min-width: 960px)',
+  md: 'all and (max-width: 959px)'
+);
