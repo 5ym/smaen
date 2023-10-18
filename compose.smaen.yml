@@ -1,4 +1,3 @@
-version: '3.7'
 services:
   smaen-back:
     image: r.daco.dev/5ym/smaen_back
