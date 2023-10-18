@@ -7,7 +7,7 @@ services:
     deploy:
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.seb.rule=Host(`smaen.daco.dev`) && PathPrefix(`/api`)"
+        - "traefik.http.routers.seb.rule=Host(`smaen.doany.id`) && PathPrefix(`/api`)"
         - "traefik.http.routers.seb.tls.certresolver=myresolver"
         - "traefik.http.services.seb.loadbalancer.server.port=80"
   smaen-front:
@@ -17,7 +17,7 @@ services:
     deploy:
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.sef.rule=Host(`smaen.daco.dev`)"
+        - "traefik.http.routers.sef.rule=Host(`smaen.doany.id`)"
         - "traefik.http.routers.sef.tls.certresolver=myresolver"
         - "traefik.http.services.sef.loadbalancer.server.port=3000"
 networks:
