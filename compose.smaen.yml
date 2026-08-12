@@ -1,16 +1,8 @@
 services:
-  smaen-back:
-    image: r.daco.dev/5ym/smaen_back
-    networks:
-      - main_default
-    deploy:
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.seb.rule=Host(`smaen.doany.id`) && PathPrefix(`/api`)"
-        - "traefik.http.routers.seb.tls.certresolver=myresolver"
-        - "traefik.http.services.seb.loadbalancer.server.port=80"
-  smaen-front:
-    image: r.daco.dev/5ym/smaen_front
+  smaen:
+    image: r.daco.dev/5ym/smaen
+    volumes:
+      - smaen-data:/app/data
     networks:
       - main_default
     deploy:
@@ -19,6 +11,8 @@ services:
         - "traefik.http.routers.sef.rule=Host(`smaen.doany.id`)"
         - "traefik.http.routers.sef.tls.certresolver=myresolver"
         - "traefik.http.services.sef.loadbalancer.server.port=3000"
+volumes:
+  smaen-data:
 networks:
   main_default:
     external: true
