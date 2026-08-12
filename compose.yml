@@ -3,12 +3,20 @@ services:
     image: oven/bun:1
     working_dir: /app
     command: sh -c "bun install && bun run dev --host 0.0.0.0"
-    ports:
-      - "5173:5173"
+    labels:
+      caddy: smaen.localhost
+      caddy.reverse_proxy: "{{upstreams 5173}}"
+    networks:
+      - default
+      - proxy
     volumes:
       - .:/app
       - node_modules:/app/node_modules
       - data:/app/data
+
+networks:
+  proxy:
+    external: true
 
 volumes:
   node_modules:
