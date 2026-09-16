@@ -11,7 +11,7 @@
 			"!**/.svelte-kit",
 			"!**/build",
 			"!**/data",
-			"!src/app.css"
+			"!src/app.scss"
 		]
 	},
 	"formatter": {

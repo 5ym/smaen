@@ -9,7 +9,7 @@ Yahoo Japan主催のHack Day 2019内ハッカソンにて作成。
 - [SvelteKit](https://svelte.dev/docs/kit) — フロントエンド + APIルート（旧 Nuxt.js + Flask を統合）
 - [Bun](https://bun.sh) — ランタイム / パッケージマネージャ
 - SQLite ([bun:sqlite](https://bun.sh/docs/api/sqlite)) — 駅名サジェスト + 経路検索キャッシュ
-- [daisyUI](https://daisyui.com) (Tailwind CSS) — UI
+- [Pico CSS](https://picocss.com) + 自前スタイル (`src/app.scss`) — UI
 - [Biome](https://biomejs.dev) — lint / format
 
 ## 開発
