@@ -52,53 +52,56 @@ function shareLink() {
 }
 </script>
 
-<form onsubmit={search} class="card bg-base-100 shadow-md">
-	<div class="card-body gap-4">
-		<h1 class="card-title">ふたりの中間の駅で待ち合わせ</h1>
+<form onsubmit={search} class="panel body">
+	<h1>ふたりの中間の駅で待ち合わせ</h1>
 
-		<label class="form-control w-full">
-			<span class="label-text mb-1 flex items-center gap-2">
-				あなたの駅
-				{#if locating}
-					<span class="loading loading-spinner loading-xs"></span>
-					<span class="text-xs text-base-content/60">現在地から検索中…</span>
-				{/if}
-			</span>
-			<input
-				type="text"
-				bind:value={yourStation}
-				list="stations"
-				placeholder="例: 新宿"
-				class="input input-bordered w-full"
-			/>
-		</label>
-
-		<label class="form-control w-full">
-			<span class="label-text mb-1">あいての駅</span>
-			<input
-				type="text"
-				bind:value={partnerStation}
-				list="stations"
-				placeholder="例: 大宮"
-				class="input input-bordered w-full"
-			/>
-		</label>
-
-		<datalist id="stations">
-			{#each data.stations as station (station)}
-				<option value={station}></option>
-			{/each}
-		</datalist>
-
-		<div class="card-actions justify-center">
-			<button type="submit" class="btn btn-primary" disabled={yourStation === '' || partnerStation === ''}>
-				検索
-			</button>
-			{#if canShare}
-				<button type="button" class="btn btn-secondary" onclick={shareLink} disabled={yourStation === ''}>
-					相手にリンクを共有
-				</button>
+	<label class="field">
+		<span class="lab cluster">
+			あなたの駅
+			{#if locating}
+				<span class="spin"></span>
+				<span class="tiny muted">現在地から検索中…</span>
 			{/if}
-		</div>
+		</span>
+		<input type="text" bind:value={yourStation} list="stations" placeholder="例: 新宿" />
+	</label>
+
+	<label class="field">
+		<span class="lab">あいての駅</span>
+		<input type="text" bind:value={partnerStation} list="stations" placeholder="例: 大宮" />
+	</label>
+
+	<datalist id="stations">
+		{#each data.stations as station (station)}
+			<option value={station}></option>
+		{/each}
+	</datalist>
+
+	<div class="cluster actions">
+		<button type="submit" disabled={yourStation === '' || partnerStation === ''}>
+			検索
+		</button>
+		{#if canShare}
+			<button type="button" class="secondary" onclick={shareLink} disabled={yourStation === ''}>
+				相手にリンクを共有
+			</button>
+		{/if}
 	</div>
 </form>
+
+<style>
+/* 元の card-body gap-4 と同じ間隔 */
+.panel.body {
+	gap: 1rem;
+}
+h1 {
+	font-size: 1.25rem;
+}
+/* .lab は太字だが、ラベル脇の状況表示まで太くしない */
+.lab .tiny {
+	font-weight: 400;
+}
+.actions {
+	justify-content: center;
+}
+</style>
