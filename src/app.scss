@@ -19,7 +19,11 @@
 		"forms/input-range": false,
 		"forms/input-file": false,
 		"components/accordion": false,
-		"components/card": false,
+		/*
+		 * **card は切らない。** --pico-card-background-color と --pico-card-box-shadow は
+		 * このモジュールが有効なときだけ Pico が出力する。切ると .panel の地と影が
+		 * 空になり、箱が透明になる(明暗どちらの値も一緒に消える)
+		 */
 		"components/dropdown": false,
 		"components/nav": false,
 		"components/tooltip": false
