@@ -1,4 +1,6 @@
 <script lang="ts">
+import { resolve } from '$app/paths';
+
 let { data } = $props();
 </script>
 
@@ -22,7 +24,7 @@ let { data } = $props();
 		</div>
 	{/each}
 
-	<a href="/" class="button ghost back">もう一度検索する</a>
+	<a href={resolve('')} class="button ghost back">もう一度検索する</a>
 </div>
 
 <style>

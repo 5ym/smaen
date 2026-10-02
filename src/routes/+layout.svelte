@@ -1,5 +1,6 @@
 <script lang="ts">
 import '../app.scss';
+import { asset, resolve } from '$app/paths';
 
 let { children } = $props();
 </script>
@@ -10,8 +11,8 @@ let { children } = $props();
 
 <div class="shell">
 	<header>
-		<a href="/" class="button ghost">
-			<img src="/logo.png" alt="スマートエンカウント" />
+		<a href={resolve('')} class="button ghost">
+			<img src={asset('logo.png')} alt="スマートエンカウント" />
 		</a>
 	</header>
 

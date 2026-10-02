@@ -1,5 +1,6 @@
 <script lang="ts">
 import { goto } from '$app/navigation';
+import { resolve } from '$app/paths';
 import { page } from '$app/state';
 
 let { data } = $props();
@@ -19,7 +20,9 @@ $effect(() => {
 		async (position) => {
 			try {
 				const res = await fetch(
-					`/api/nearest?x=${position.coords.longitude}&y=${position.coords.latitude}`,
+					resolve(
+						`api/nearest?x=${position.coords.longitude}&y=${position.coords.latitude}`,
+					),
 				);
 				const nearest = await res.json();
 				const name = nearest?.response?.station?.[0]?.name;
@@ -40,14 +43,16 @@ function search(event: SubmitEvent) {
 	event.preventDefault();
 	if (yourStation === '' || partnerStation === '') return;
 	goto(
-		`/result?first=${encodeURIComponent(yourStation)}&second=${encodeURIComponent(partnerStation)}`,
+		resolve(
+			`result?first=${encodeURIComponent(yourStation)}&second=${encodeURIComponent(partnerStation)}`,
+		),
 	);
 }
 
 function shareLink() {
 	navigator.share({
 		title: 'スマートエンカウント',
-		url: `${page.url.origin}?current_station=${encodeURIComponent(yourStation)}`,
+		url: `${page.url.origin}${resolve('')}?current_station=${encodeURIComponent(yourStation)}`,
 	});
 }
 </script>

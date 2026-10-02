@@ -1,5 +1,5 @@
 import { error, json } from '@sveltejs/kit';
-import { searchMeetingPoint } from '$lib/server/transit';
+import { searchMeetingPoint } from '#lib/server/transit.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ url }) => {

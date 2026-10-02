@@ -1,12 +1,13 @@
 import { error, redirect } from '@sveltejs/kit';
-import { searchMeetingPoint } from '$lib/server/transit';
+import { searchMeetingPoint } from '#lib/server/transit.js';
+import { resolve } from '$app/paths';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {
 	const first = url.searchParams.get('first')?.trim() ?? '';
 	const second = url.searchParams.get('second')?.trim() ?? '';
 	if (first === '' || second === '') {
-		redirect(302, '/');
+		redirect(302, resolve(''));
 	}
 	try {
 		return await searchMeetingPoint(first, second);
