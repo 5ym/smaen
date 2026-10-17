@@ -8,22 +8,23 @@
 		"dev": "bunx --bun vite dev",
 		"build": "bunx --bun vite build",
 		"preview": "bunx --bun vite preview",
-		"start": "bun ./build/index.js",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"start": "bun ./build",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo",
 		"lint": "biome check .",
 		"format": "biome check --write ."
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.15",
 		"@picocss/pico": "^2.1.1",
-		"@sveltejs/adapter-node": "^6.0.0",
+		"@sveltejs/adapter-bun": "^1.0.0",
 		"@sveltejs/kit": "^3.1.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@types/bun": "^1.4.3",
+		"@typescript/native": "npm:typescript@7",
 		"sass-embedded": "^1.105.2",
 		"svelte": "^5.57.2",
 		"svelte-check": "^4.7.7",
-		"typescript": "^7.0.0",
+		"typescript": "~6.0.3",
 		"vite": "^8.3.4"
 	},
 	"imports": {

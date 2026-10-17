@@ -12,4 +12,4 @@ COPY --from=build /app/node_modules node_modules
 COPY package.json .
 ENV NODE_ENV=production
 EXPOSE 3000
-CMD ["bun", "./build/index.js"]
+CMD ["bun", "./build"]
