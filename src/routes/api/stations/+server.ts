@@ -1,5 +1,7 @@
 import { json } from "@sveltejs/kit";
+
 import { suggestStations } from "#lib/server/db.js";
+
 import type { RequestHandler } from "./$types";
 
 export const GET: RequestHandler = ({ url }) => {

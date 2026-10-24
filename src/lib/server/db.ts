@@ -1,5 +1,6 @@
 import { Database } from "bun:sqlite";
 import { mkdirSync } from "node:fs";
+
 import { stationNames } from "./stations";
 
 mkdirSync("data", { recursive: true });
