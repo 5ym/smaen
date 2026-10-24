@@ -1,6 +1,8 @@
-import { error, redirect } from "@sveltejs/kit";
-import { searchMeetingPoint } from "#lib/server/transit.js";
 import { resolve } from "$app/paths";
+import { error, redirect } from "@sveltejs/kit";
+
+import { searchMeetingPoint } from "#lib/server/transit.js";
+
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ url }) => {

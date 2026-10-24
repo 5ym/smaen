@@ -1,3 +1,5 @@
 # 整形 (`bun fmt`。`package.json` の format・lint から呼ぶ)。書き方は既定のまま、外すものだけ
 [fmt]
+# import を並べ替える。組分けは既定のまま、副作用だけの import (CSS など) は動かさない
+sortImports = true
 ignorePatterns = ["static/", "renovate.json"]
