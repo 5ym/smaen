@@ -7,10 +7,10 @@ Yahoo Japan主催のHack Day 2019内ハッカソンにて作成。
 ## 技術構成
 
 - [SvelteKit](https://svelte.dev/docs/kit) — フロントエンド + APIルート（旧 Nuxt.js + Flask を統合）
-- [Bun](https://bun.sh) — ランタイム / パッケージマネージャ
+- [Bun](https://bun.sh) 1.4.4+ — ランタイム / パッケージマネージャ
 - SQLite ([bun:sqlite](https://bun.sh/docs/api/sqlite)) — 駅名サジェスト + 経路検索キャッシュ
 - [Pico CSS](https://picocss.com) + 自前スタイル (`src/app.scss`) — UI
-- [Biome](https://biomejs.dev) — lint / format
+- [oxlint](https://oxc.rs/docs/guide/usage/linter) + `bun fmt` — lint / format
 
 ## 開発
 
@@ -21,14 +21,14 @@ bun run dev
 
 ## コマンド
 
-| コマンド | 内容 |
-| --- | --- |
-| `bun run dev` | 開発サーバー起動 |
-| `bun run build` | プロダクションビルド |
-| `bun run start` | ビルド済みサーバー起動 (port 3000) |
-| `bun run lint` | Biomeでチェック |
-| `bun run format` | Biomeで整形 |
-| `bun run check` | svelte-check |
+| コマンド         | 内容                                    |
+| ---------------- | --------------------------------------- |
+| `bun run dev`    | 開発サーバー起動                        |
+| `bun run build`  | プロダクションビルド                    |
+| `bun run start`  | ビルド済みサーバー起動 (port 3000)      |
+| `bun run lint`   | oxlint と書式の確認 (`bun fmt --check`) |
+| `bun run format` | oxlint の自動修正と整形 (`bun fmt`)     |
+| `bun run check`  | svelte-check                            |
 
 ## API
 
