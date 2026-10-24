@@ -1,6 +1,6 @@
-import { suggestStations } from '#lib/server/db.js';
-import type { PageServerLoad } from './$types';
+import { suggestStations } from "#lib/server/db.js";
+import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = () => {
-	return { stations: suggestStations('') };
+  return { stations: suggestStations("") };
 };
