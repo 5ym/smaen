@@ -2,4 +2,4 @@
 [fmt]
 # import を並べ替える。組分けは既定のまま、副作用だけの import (CSS など) は動かさない
 sortImports = true
-ignorePatterns = ["static/", "renovate.json"]
+ignorePatterns = ["renovate.json"]
