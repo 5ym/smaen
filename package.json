@@ -21,7 +21,7 @@
     "@types/bun": "^1.4.4",
     "@typescript/native": "npm:typescript@7",
     "oxlint": "^1.91.0",
-    "sass-embedded": "^1.107.1",
+    "sass-embedded": "^1.108.0",
     "svelte": "^5.57.3",
     "svelte-check": "^4.7.8",
     "typescript": "~6.0.3",
