@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../app.scss";
+  import "../app.css";
   import { asset, resolve } from "$app/paths";
 
   let { children } = $props();
