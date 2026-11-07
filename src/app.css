@@ -1,34 +1,29 @@
 /*
- * 見た目は Pico CSS(v2)。使う部品だけを SCSS で読み込む。
+ * 見た目は Blades の Pico (Pico CSS v2 を引き継いだもの。素の CSS で、Sass は要らない)。
+ * denpa・トドロク・tama・worklog・noren と同じ構成。
  *
  * **Tailwind + daisyUI をやめた。** 出てくる部品は箱・札・ボタン・入力欄くらいで、
- * utility class を並べるより素の HTML を整えるほうが小さく、後から読んで分かる
- * (denpa・トドロク・tama・worklog・noren と同じ構成)。
+ * utility class を並べるより素の HTML を整えるほうが小さく、後から読んで分かる。
  *
- * **色は Pico の既定のまま使う。** 元のテーマの色は写さない。
- * --ui-* は Pico の変数から引いてあるので、明暗の切り替えにもそのまま追従する。
+ * **Pico は使う部品だけ読み込む。** 部品 (@anyblades/blades/<部品>) は `blades` の層 (@layer) に入る。
+ * 層に入らないこちらの規則は、詳細度に関係なく必ず Pico に勝つ。各画面の <style> も同じく層の外。
+ * 順番は variables → layout → content → forms → components → utilities を崩さない。
+ * **components の card は読む。** --pico-card-background-color と --pico-card-box-shadow は
+ * この部品にあり、無いと .panel の地と影が空になる(箱が透明になる)。
+ *
+ * **色は Pico の既定のまま使う。** --ui-* は Pico の変数から引いてあるので、明暗の切り替えにもそのまま追従する。
  */
-@use "@picocss/pico/scss/pico" with (
-  $enable-semantic-container: false,
-  $enable-responsive-typography: false,
-  $enable-responsive-spacings: false,
-  $modules: (
-    "layout/landmarks": false,
-    "content/figure": false,
-    "forms/input-color": false,
-    "forms/input-range": false,
-    "forms/input-file": false,
-    "components/accordion": false,
-    /*
-		 * **card は切らない。** --pico-card-background-color と --pico-card-box-shadow は
-		 * このモジュールが有効なときだけ Pico が出力する。切ると .panel の地と影が
-		 * 空になり、箱が透明になる(明暗どちらの値も一緒に消える)
-		 */
-      "components/dropdown": false,
-    "components/nav": false,
-    "components/tooltip": false,
-  )
-);
+@import "@anyblades/blades/variables";
+@import "@anyblades/blades/layout/document";
+@import "@anyblades/blades/content/typography";
+@import "@anyblades/blades/content/link";
+@import "@anyblades/blades/content/button";
+@import "@anyblades/blades/content/embedded-content";
+@import "@anyblades/blades/content/misc";
+@import "@anyblades/blades/forms/basics";
+@import "@anyblades/blades/forms/checkbox-radio-switch";
+@import "@anyblades/blades/components/card";
+@import "@anyblades/blades/utilities";
 
 :root {
   /* Web フォントは束ねない(OS のフォントに任せる) */
@@ -47,7 +42,7 @@
 }
 
 /*
- * この app.scss で使う色は**すべて Pico の変数から引く**。自前の色を持たないので、
+ * この app.css で使う色は**すべて Pico の変数から引く**。自前の色を持たないので、
  * Pico 側の明暗の切り替え(prefers-color-scheme / data-theme)にそのまま追従する
  */
 :root {

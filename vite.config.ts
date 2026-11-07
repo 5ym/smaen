@@ -12,9 +12,6 @@ export default defineConfig({
       adapter: adapter(),
     }),
   ],
-  css: {
-    preprocessorOptions: { scss: { silenceDeprecations: ["if-function"] } },
-  },
   ssr: {
     external: ["bun:sqlite"],
   },
