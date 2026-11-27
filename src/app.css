@@ -5,7 +5,7 @@
  * **Tailwind + daisyUI をやめた。** 出てくる部品は箱・札・ボタン・入力欄くらいで、
  * utility class を並べるより素の HTML を整えるほうが小さく、後から読んで分かる。
  *
- * **Pico は使う部品だけ読み込む。** 部品 (@anyblades/blades/<部品>) は `blades` の層 (@layer) に入る。
+ * **Pico は使う部品だけ読み込む。** 部品 (@sveti/blades/<部品>) は `blades` の層 (@layer) に入る。
  * 層に入らないこちらの規則は、詳細度に関係なく必ず Pico に勝つ。各画面の <style> も同じく層の外。
  * 順番は variables → layout → content → forms → components → utilities を崩さない。
  * **components の card は読む。** --pico-card-background-color と --pico-card-box-shadow は
@@ -13,17 +13,17 @@
  *
  * **色は Pico の既定のまま使う。** --ui-* は Pico の変数から引いてあるので、明暗の切り替えにもそのまま追従する。
  */
-@import "@anyblades/blades/variables";
-@import "@anyblades/blades/layout/document";
-@import "@anyblades/blades/content/typography";
-@import "@anyblades/blades/content/link";
-@import "@anyblades/blades/content/button";
-@import "@anyblades/blades/content/embedded-content";
-@import "@anyblades/blades/content/misc";
-@import "@anyblades/blades/forms/basics";
-@import "@anyblades/blades/forms/checkbox-radio-switch";
-@import "@anyblades/blades/components/card";
-@import "@anyblades/blades/utilities";
+@import "@sveti/blades/variables";
+@import "@sveti/blades/layout/document";
+@import "@sveti/blades/content/typography";
+@import "@sveti/blades/content/link";
+@import "@sveti/blades/content/button";
+@import "@sveti/blades/content/embedded-content";
+@import "@sveti/blades/content/misc";
+@import "@sveti/blades/forms/basics";
+@import "@sveti/blades/forms/checkbox-radio-switch";
+@import "@sveti/blades/components/card";
+@import "@sveti/blades/utilities";
 
 :root {
   /* Web フォントは束ねない(OS のフォントに任せる) */

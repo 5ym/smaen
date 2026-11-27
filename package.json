@@ -14,10 +14,10 @@
     "format": "oxlint --fix && bun fmt"
   },
   "devDependencies": {
-    "@anyblades/blades": "^3.1.4",
     "@sveltejs/adapter-bun": "^1.0.3",
     "@sveltejs/kit": "^3.4.1",
     "@sveltejs/vite-plugin-svelte": "^7.3.2",
+    "@sveti/blades": "^3.1.4",
     "@types/bun": "^1.4.5",
     "@typescript/native": "npm:typescript@7",
     "oxlint": "^1.95.0",
